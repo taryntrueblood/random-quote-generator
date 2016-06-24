@@ -6,7 +6,7 @@ var quotes = [
   },
   {
     quote: "In the End, we will remember not the words of our enemies, but the silence of our friends.",
-    source: "Martin Luther King Jr."
+    source: "Martin Luther King Jr"
   },
   {
     quote: "Good people do not need laws to tell them to act responsibly, while bad people will find a way around the laws.",
@@ -28,9 +28,10 @@ var output = "";
 function getRandomQuote() {
   //select a random quote from the quotes array
   var random = Math.floor(Math.random() * quotes.length);
+  //create a for loop to loop through the array
   for(var i = 0; i < quotes.length; i++){
     quote = quotes[random];
-    output = "<p class='quote'>"+ quote.quote +"</p>";
+    output = "<p class='quote'>"+ quote.quote + "</p>";
     output += "<p class='source'>"+ quote.source + "</p>";
   }
     document.getElementById('quote-box').innerHTML = output;
@@ -38,6 +39,7 @@ function getRandomQuote() {
 
 //create a function called printQuote
 function printQuote(){
+   //call function getRandomQuote and assign it to a variable
     var randomQuote = getRandomQuote();
      return randomQuote;
 }
