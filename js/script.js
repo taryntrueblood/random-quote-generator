@@ -23,14 +23,19 @@ var quotes = [
 function getRandomQuote() {
   //select a random quote from the quotes array
   var random = Math.floor(Math.random() * quotes.length);
-  for(var prop in quotes[random])
-  console.log(quotes[random][prop]);
+  for(var prop in quotes[random]){
+     document.getElementById('quote-box').innerHTML = quotes[random][prop];
+   }
  }
 
 //create a function called printQuote
 function printQuote(){
-    var random = getRandomQuote();
-    document.write("<p class=quote>"+ random + "</p>");
+    var randomQuote = getRandomQuote();
+
+    var quote = "<p class='quote'>"+ "</p>";
+        quote += "<p class='source'>" + "</p>";
+     document.getElementById('quote-box').innerHTML = quote;
+     return randomQuote;
 }
 
 
