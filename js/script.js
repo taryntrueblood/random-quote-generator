@@ -22,26 +22,24 @@ var quotes = [
   }
 ];
 
-var quote;
 var output = "";
 //create a function named getRandomQuote
 function getRandomQuote() {
   //select a random quote from the quotes array
   var random = Math.floor(Math.random() * quotes.length);
-  //create a for loop to loop through the array
-  for(var i = 0; i < quotes.length; i++){
-    quote = quotes[random];
-    output = "<p class='quote'>"+ quote.quote + "</p>";
-    output += "<p class='source'>"+ quote.source + "</p>";
-  }
-    document.getElementById('quote-box').innerHTML = output;
+  return quotes[random];
  }
 
 //create a function called printQuote
 function printQuote(){
    //call function getRandomQuote and assign it to a variable
     var randomQuote = getRandomQuote();
-     return randomQuote;
+
+   //access objects properties and put them into a string
+      output = "<p class='quote'>"+ randomQuote.quote + "</p>";
+      output += "<p class='source'>"+ randomQuote.source + "</p>";
+
+      document.getElementById('quote-box').innerHTML = output;
 }
 
 
